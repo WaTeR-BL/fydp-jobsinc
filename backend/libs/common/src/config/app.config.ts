@@ -20,38 +20,9 @@ export default () => ({
     mongo: {
         uri: process.env.MONGO_URI || '',
     },
-    groq: {
-        apiKey: process.env.GROQ_API_KEY,
-        fallbackModel: process.env.GROQ_FALLBACK_MODEL,
-    },
-    openai: {
-        apiKey: process.env.OPENAI_API_KEY,
-    },
-    assemblyai: {
-        apiKey: process.env.ASSEMBLYAI_API_KEY,
-    },
-    pinecone: {
-        apiKey: process.env.PINECONE_API_KEY,
-        indexName: process.env.PINECONE_INDEX_NAME,
-    },
     server: {
         port: 3003,
         nodeEnv: 'production',
-    },
-    indeed: {
-        apiKey: process.env.INDEED_API_KEY || '',
-    },
-    scrape: {
-        defaultCountry: process.env.SCRAPE_DEFAULT_COUNTRY || 'pk',
-        defaultLocation: process.env.SCRAPE_DEFAULT_LOCATION || 'Pakistan',
-        resultsWanted:
-            parseInt(process.env.SCRAPE_RESULTS_WANTED ?? '', 10) || 20,
-        intervalMinutes:
-            parseInt(process.env.SCRAPE_INTERVAL_MINUTES ?? '', 10) || 30,
-    },
-    secret: {
-        access: process.env.AT_SECRET || '',
-        refresh: process.env.RT_SECRET || '',
     },
     google: {
         client_id: process.env.GOOGLE_CLIENT_ID,
