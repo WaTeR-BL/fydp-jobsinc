@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <meta charset='utf-8' />
+        <meta name='viewport' content='width=device-width,initial-scale=1' />
+        <style
+        >
+        body{font-family:Arial,sans-serif;line-height:1.6;color:#333;margin:0;padding:0}
+        .container{max-width:600px;margin:0 auto;padding:20px}
+        .header{background:{{primaryColor}};color:#fff;padding:30px;text-align:center;border-radius:8px 8px 0 0}
+        .logo{max-width:150px;margin-bottom:20px}
+        .content{background:#f9f9f9;padding:30px;border-radius:0 0 8px 8px}
+        .details{background:#fff;padding:20px;border-left:4px solid {{primaryColor}};margin:20px 0}
+        .meeting-box{background:#f0f8ff;padding:15px;border-radius:6px;margin:15px 0;text-align:center}
+        .meeting-box a{color:{{primaryColor}};font-weight:bold;font-size:16px;text-decoration:none;word-break:break-all}
+        .ps-note{background:#fff3cd;border-left:4px solid #ffc107;padding:15px;margin-top:20px;font-size:14px;color:#856404}
+        .footer{text-align:center;margin-top:30px;color:#666;font-size:12px}
+        a
+        {
+            color:{{primaryColor}}
+        }    </style>
+    </head>
+    <body>
+        <div class='container'>
+            <div class='header'>
+                {{#if logoUrl}}
+                    <img src='{{logoUrl}}' alt='{{companyName}}' class='logo' />
+                {{/if}}
+                <h1>📹 Online Interview Invitation</h1>
+            </div>
+
+            <div class='content'>
+                <p>Dear {{applicantName}},</p>
+
+                <p>
+                    You are invited to an online interview for the
+                    <strong>{{jobTitle}}</strong>
+                    position at
+                    <strong>{{companyName}}</strong>.
+                </p>
+
+                <p>
+                    You should have already received a
+                    <strong>Google Meet calendar invitation</strong>
+                    from the interviewer’s email address
+                    <strong>{{interviewerEmail}}</strong>. Please make sure to
+                    check your inbox and spam folder.
+                </p>
+
+                <div class='details'>
+                    <p><strong>📅 Date:</strong> {{interviewDate}}</p>
+                    <p><strong>🕐 Time:</strong> {{interviewTime}}</p>
+                </div>
+
+                {{#if meetingLink}}
+                    <div class='meeting-box'>
+                        <p><strong>Official Interview Meeting Link</strong></p>
+                        <p>
+                            <a
+                                href='{{meetingLink}}'
+                                target='_blank'
+                                rel='noopener noreferrer'
+                            >
+                                {{meetingLink}}
+                            </a>
+                        </p>
+                        <p style='font-size:12px;color:#666;margin-top:10px'>
+                            This meeting has been scheduled by our interviewer
+                            and matches the Google Meet calendar invitation you
+                            received. Please join using the link above at the
+                            scheduled time and do not share it with others.
+                        </p>
+                    </div>
+                {{/if}}
+
+                <p>
+                    We recommend joining the meeting 5 minutes early to ensure
+                    your audio and video are working properly.
+                </p>
+
+                <div class='ps-note'>
+                    <strong>P.S.</strong>
+                    This is an automated message. Please do not reply to this
+                    email. For interview-related questions or rescheduling,
+                    contact us at
+                    <a href='mailto:{{companyEmail}}'>{{companyEmail}}</a>.
+                </div>
+            </div>
+
+            <div class='footer'>
+                <p>&copy; {{year}} {{companyName}}. All rights reserved.</p>
+            </div>
+        </div>
+    </body>
+</html>
